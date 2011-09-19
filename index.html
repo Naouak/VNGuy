@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>VN Test</title>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="yui/yui/yui-min.js"></script>
+
+<script type="text/javascript" src="vn/event.js"></script>
+<script type="text/javascript" src="vn/sample/background.js"></script>
+<script type="text/javascript" src="vn/sample/text.js"></script>
+<script type="text/javascript" src="vn/sample/action.js"></script>
+
+<script type="text/javascript" src="vn/eventlist.js"></script>
+<script type="text/javascript" src="vn/scriptreader.js"></script>
+<script type="text/javascript" src="vn/userinterface.js"></script>
+<script type="text/javascript" src="vn/main.js"></script>
+
+
+<script type="text/javascript">
+YUI({
+	base: "yui/"
+}).use(
+	"BG","Text","Action",
+    "vn-main",
+    function(Y){
+		new Y.VN.Main();
+    }
+);
+</script>
