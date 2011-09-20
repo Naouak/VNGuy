@@ -17,6 +17,7 @@ YUI.add("vn-event",function(Y){
 		destroy: function(){
 		},
 		hasFinished: function(){
+			return true;
 		},
 		isBlocking: function(){
 			return false;
