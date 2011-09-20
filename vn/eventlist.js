@@ -37,6 +37,18 @@ YUI.add("vn-eventlist",function(Y){
 				block = block|Y.bind(e[i].isBlocking,e[i])();
 			}
 
+			var remove = true;
+			while(remove){
+				remove = false;
+				for(i in e){
+					if(Y.bind(e[i].hasFinished,e[i])()){
+						e.splice(i,1);
+						remove = true;
+						break;
+					}
+				}
+			}
+
 			if(!block){
 				this.fire("requestEvent");
 			}
