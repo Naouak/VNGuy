@@ -1,0 +1,5 @@
+[
+	{"name": "ClearText"},
+	{"name": "AddText", "params":{"text":"I need to test some things"}},
+	{"name": "ClickWait"}
+]

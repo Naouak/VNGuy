@@ -18,12 +18,20 @@ YUI.add("vn-eventlist",function(Y){
 
 	Y.extend(EventList,Y.Base,{
 		initializer: function(){
+			this.publish("stackScript",{
+				emitFacade: false
+			});
+			this.publish("scriptLoaded",{
+				emitFacade: false
+			});
+			//this.processEvents();
 			Y.later(1000/60,this,this.processEvents,[],true);
 		},
 		newEvent: function(evt){
 			evt.addToList(this);
 			evt.addToUI(this.get("UserInterface"));
 			this.get("currentEvents").push(evt);
+
 		},
 
 		processEvents: function(){
@@ -52,7 +60,6 @@ YUI.add("vn-eventlist",function(Y){
 			if(!block){
 				this.fire("requestEvent");
 			}
-
 		},
 
 		registerEvent: function(name,evt){
@@ -63,6 +70,14 @@ YUI.add("vn-eventlist",function(Y){
 			}
 			g[name] = evt;
 			this.set("registeredEvents",g);
+		},
+
+		stackScript: function(script){
+			this.fire("stackScript",{script: script});
+		},
+		scriptLoaded: function(evt){
+			Y.log(evt.script+" Loaded");
+			this.fire("scriptLoaded",evt);
 		}
 	});
 

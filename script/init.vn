@@ -7,7 +7,11 @@
 	{"name": "BG2", "params":{"bg":"bg1"}},
 	{"name": "AddText", "params":{"text":"Ici j'ai mis un premier texte de test, tu vois. Histoire de voir comment le flot du text il est aware."}},
 	{"name": "ClickWait"},
+	{"name": "CallScript", "params": {"script":"hutch"}},
+	{"name": "ClickWait"},
+	{"name": "CallScript", "params": {"script":"hutch2"}},
 	{"name": "BG2", "params":{"bg":"bg2"}},
 	{"name": "ClearText"},
-	{"name": "AddText", "params":{"text":"Et puis là j'ai retiré le texte parce qu'il était pas assez aware que le suivant arrivait."}}
+	{"name": "AddText", "params":{"text":"Et puis là j'ai retiré le texte parce qu'il était pas assez aware que le suivant arrivait."}},
+	{"name": "ClickWait"}
 ]
