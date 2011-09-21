@@ -29,6 +29,7 @@ YUI.add("vn-main",function(Y){
 			sr.on("newEvent",Y.bind(el.newEvent,el));
 			el.on("requestEvent",Y.bind(sr.requestEvent,sr));
 			el.on("stackScript",Y.bind(sr.stackScript,sr));
+			el.on("gotoScript",Y.bind(sr.gotoScript,sr));
 			sr.on("scriptLoaded",Y.bind(el.scriptLoaded,el));
 
 		}

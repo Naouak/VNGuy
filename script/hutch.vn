@@ -1,5 +1,6 @@
 [
 	{"name": "ClearText"},
 	{"name": "AddText", "params":{"text":"This text here is loaded by a sub script"}},
-	{"name": "ClickWait"}
+	{"name": "ClickWait"},
+	{"name": "Goto", "params":{"script":"hutch2"}}
 ]

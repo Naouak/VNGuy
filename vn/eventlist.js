@@ -21,10 +21,12 @@ YUI.add("vn-eventlist",function(Y){
 			this.publish("stackScript",{
 				emitFacade: false
 			});
+			this.publish("gotoScript",{
+				emitFacade: false
+			});
 			this.publish("scriptLoaded",{
 				emitFacade: false
 			});
-			//this.processEvents();
 			Y.later(1000/60,this,this.processEvents,[],true);
 		},
 		newEvent: function(evt){
@@ -63,7 +65,6 @@ YUI.add("vn-eventlist",function(Y){
 		},
 
 		registerEvent: function(name,evt){
-			Y.log("Registering Event "+name);
 			var g = this.get("registeredEvents");
 			if(g == undefined){
 				g = {};
@@ -75,8 +76,10 @@ YUI.add("vn-eventlist",function(Y){
 		stackScript: function(script){
 			this.fire("stackScript",{script: script});
 		},
+		gotoScript: function(script){
+			this.fire("gotoScript",{script: script});
+		},
 		scriptLoaded: function(evt){
-			Y.log(evt.script+" Loaded");
 			this.fire("scriptLoaded",evt);
 		}
 	});

@@ -30,8 +30,6 @@ YUI.add("vn-scriptreader",function(Y){
 			});
 			this.loadScript("init");
 			this.get("scriptStack").push(["init",0]);
-
-			this.after("scriptStackChange",Y.bind(this._ssChanged,this));
 		},
 		loadScript: function(script){
 			Y.log("test");
@@ -51,16 +49,20 @@ YUI.add("vn-scriptreader",function(Y){
 		},
 		stackScript: function(opt){
 			var ss = this.get("scriptStack");
-			Y.log("Stacking "+opt.script);
-			Y.log("Starting Stacking");
-			Y.log(ss.length);
 			var c = [opt.script,0];
 			ss.push(c);
 			this.set("scriptStack",ss);
 			this.fire("scriptLoaded",{"script": opt.script,loaded: true});
 		},
+		gotoScript: function(opt){
+			var ss = this.get("scriptStack");
+			var c = [opt.script,0];
+			ss.pop();
+			ss.push(c);
+			this.set("scriptStack",ss);
+			this.fire("scriptLoaded",{"script": opt.script,loaded: true});
+		},
 		requestEvent: function(){
-			Y.log("Event Requested");
 			var ss = this.get("scriptStack");
 			var length = ss.length-1;
 			var c = ss[ss.length-1];
@@ -91,17 +93,15 @@ YUI.add("vn-scriptreader",function(Y){
 			}
 			if(c != undefined){
 				//Let's putback our current script in the stack
-				ss[length] = c;
+				if(ss[length][0] == c[0]){
+					ss[length] = c;
+				}
 				//ss.push(c);
 			}
 			else{
 				ss.splice(length,1);
 			}
 			this.set("scriptStack",ss);
-		},
-		_ssChanged: function(evt){
-			Y.log("******************* ScriptStackChanged");
-			Y.log(evt.newVal);
 		}
 	});
 

@@ -12,7 +12,7 @@ YUI.add("vn-userinterface",function(Y){
 			var cb = this.get("contentBox");
 			cb.setStyle("width","1024");
 			cb.setStyle("height","768");
-			cb.setStyle("border","solid black 1px");
+			//cb.setStyle("border","solid black 1px");
 			cb.setStyle("margin","auto");
 			cb.setStyle("position","relative");
 			cb.setStyle("overflow","hidden");
