@@ -32,7 +32,6 @@ YUI.add("vn-scriptreader",function(Y){
 			this.get("scriptStack").push(["init",0]);
 		},
 		loadScript: function(script){
-			Y.log("test");
 			if(this.get("scripts."+script) != undefined){
 				return;
 			}

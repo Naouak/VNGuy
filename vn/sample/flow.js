@@ -23,7 +23,6 @@ YUI.add("Flow",function(Y){
 		},
 		addToList: function(EventList){
 			EventList.once("scriptLoaded",Y.bind(function(){
-				Y.log("Hey Listen !");
 				this.set("done",true);
 			},this));
 			Y.bind(EventList.stackScript,EventList)(this.get("script"));
@@ -65,8 +64,8 @@ YUI.add("Flow",function(Y){
 		removeFromUI: function(){
 		},
 		addToList: function(EventList){
+			Y.log("Goto Created !");
 			EventList.once("scriptLoaded",Y.bind(function(){
-				Y.log("Hey Listen !");
 				this.set("done",true);
 			},this));
 			Y.bind(EventList.gotoScript,EventList)(this.get("script"));
@@ -83,7 +82,7 @@ YUI.add("Flow",function(Y){
 		}
     });
 
-    Y.namespace("VNEvent").Goto = Event;
+    Y.namespace("VNEvent").Goto = Event2;
 
 
 },"0.0.1",{requires:["vn-event"]});

@@ -15,6 +15,7 @@
 	{"name": "BG2", "params":{"bg":"bg1"}},
 	{"name": "AddText", "params":{"text":"Et je continue le texte."}},
 	{"name": "ClickWait"},
+	{"name": "Choice", "params":{"text":"What do you do?","choices":[{"text":"Say Hello","script":"hello"},{"text":"Say Hi","script":"hi"}]}},
 	{"name": "ClearText"},
 	{"name": "AddText", "params":{"text":"End of the sample"}}
 

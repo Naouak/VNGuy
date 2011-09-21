@@ -1,0 +1,5 @@
+[
+	{"name": "ClearText"},
+	{"name": "AddText", "params":{"text":"Hello"}},
+	{"name": "ClickWait"}
+]
